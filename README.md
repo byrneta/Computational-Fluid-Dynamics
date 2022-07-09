@@ -6,7 +6,7 @@ problems. Functionally the codes produce valid results; however, I am sure there
 ## Diffusion PDE
 
 Finite difference approximation of a given couette flow between two parallel plates. 
-The fluid has a constant kinematic viscosity and density. The upper plate is stationary and the lower one is suddenly set in motion with a constant velocity. Governing PDE is discretized using a first-order forward-time and second-order central space (FTCS) scheme.
+The fluid has a constant kinematic viscosity and density. The upper plate is stationary and the lower one is suddenly set in motion with a constant velocity. Governing partial differential equation (PDE) is discretized using a first-order forward-time and second-order central space (FTCS) scheme.
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/diffusion/description.pdf)
 
@@ -18,7 +18,7 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 ## Elliptic PDE
 
-Steady-state temperature distribution of a two-dimensional rectangular plate is approximated using finite difference method. Plate dimensions and boundary conditions at the edges are given. Different types of relaxation are applied: PSOR, LSOR, and ADI.
+Steady-state temperature distribution of a two-dimensional rectangular plate is approximated using finite difference method. Plate dimensions and boundary conditions at the edges are given. Different types of relaxation are applied: Point Successive Over-Relaxation (PSOR), Line Successive Over-Relaxaction (LSOR), and Alternative Direction Implicit (ADI).
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/description.pdf)
 

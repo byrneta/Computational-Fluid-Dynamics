@@ -1,6 +1,6 @@
 # Computational Fluid Dynamics
 
-Here is a collection of MATLAB code that might be of some help in solving various types of computational fluid dynamics 
+Here is a collection of MATLAB code (compatible with Octave) that might be of some help in solving various types of computational fluid dynamics 
 problems. Functionally the codes produce valid results; however, I am sure there is room for improvement from an efficiency standpoint. The original project description from my professor is also posted for each type of problem.
 
 ## Diffusion PDE

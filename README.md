@@ -3,6 +3,10 @@
 Here is a collection of MATLAB code (compatible with Octave) that might be of some help in solving various types of computational fluid dynamics 
 problems. Functionally the codes produce valid results; however, I am sure there is room for improvement from an efficiency standpoint. The original project description from my professor is also posted for each type of problem.
 
+### Octave Compatibility
+
+Tested with Octave 6.2.0 (arm64 Mac)
+
 ## Diffusion PDE
 
 Finite difference approximation of a given couette flow between two parallel plates. 

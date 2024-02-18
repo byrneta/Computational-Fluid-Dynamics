@@ -19,7 +19,7 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 ## Convection-Diffusion PDE
 
-Comparison between finite difference and finite volume approximations of wave propagation inside a one-dimensional channel. Fluid velocity and diffusion coefficient are given in addition to initial conditions along the channel and boundary conditions at the inlet and outlet. FTCS and first-order upwind are used for finite volume approximations while FTCS, first-order upwind, Lax-Wendroff and MacCormack are used for finite difference.
+Comparison between finite difference and finite volume approximations of wave propagation inside a one-dimensional channel. Fluid velocity and diffusion coefficient are given in addition to initial conditions along the channel and boundary conditions at the inlet and outlet. Forward Time-Centered Space (FTCS) and first-order upwind are used for finite volume approximations while FTCS, first-order upwind, Lax-Wendroff and MacCormack are used for finite difference.
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/description.pdf)
 
@@ -28,7 +28,7 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 ## Elliptic PDE
 
-Steady-state temperature distribution of a two-dimensional rectangular plate is approximated using finite difference method. Plate dimensions and boundary conditions at the edges are given. Different types of relaxation are applied: Point Successive Over-Relaxation (PSOR), Line Successive Over-Relaxaction (LSOR), and Alternative Direction Implicit (ADI).
+Steady-state temperature distribution of a two-dimensional rectangular plate is approximated using finite difference method. Plate dimensions and boundary conditions at the edges are given. Different types of relaxation are applied: Point Successive Over-Relaxation (PSOR), Line Successive Over-Relaxation (LSOR), and Alternative Direction Implicit (ADI).
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/description.pdf)
 

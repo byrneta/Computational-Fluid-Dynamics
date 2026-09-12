@@ -32,11 +32,6 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 Analytical = 0.000003s
 
-#### Finite Volume
-
-FTCS/FTCS = 0.038992s\
-Upwind/FTCS = 0.038287s
-
 #### Finite Difference
 
 FTCS/FTCS = 0.038769s\
@@ -44,7 +39,12 @@ Upwind/FTCS = 0.038277s\
 Lax-Wendroff/FTCS = 0.056178s\
 MacCormack/FTCS = 0.079028s
 
-### Example Plot
+#### Finite Volume
+
+FTCS/FTCS = 0.038992s\
+Upwind/FTCS = 0.038287s
+
+### Example Plots
 ![Convection-Diffusion PDE Plot #1](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/convection-diffusion-fig1.png)
 ![Convection-Diffusion PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/convection-diffusion-fig2.png)
 

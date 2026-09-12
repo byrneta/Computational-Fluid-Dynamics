@@ -5,7 +5,7 @@ problems. Functionally the codes produce valid results; however, I am sure there
 
 ### Octave Compatibility
 
-Tested with Octave 6.2.0 (arm64 Mac)
+Tested with Octave 11.3.0 (arm64 Mac), M1 Max 32GB
 
 ## Diffusion PDE
 
@@ -13,6 +13,11 @@ Finite difference approximation of a given couette flow between two parallel pla
 The fluid has a constant kinematic viscosity and density. The upper plate is stationary and the lower one is suddenly set in motion with a constant velocity. Governing partial differential equation (PDE) is discretized using a first-order forward-time and second-order central space (FTCS) scheme.
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/diffusion/description.pdf)
+
+### Comparative Times
+
+Analytical = 0.05328s
+Approximation = 0.07509s
 
 ### Example Plot
 ![Diffusion PDE Plot](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/diffusion/diffusion.png)
@@ -23,19 +28,44 @@ Comparison between finite difference and finite volume approximations of wave pr
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/description.pdf)
 
+### Comparative Times
+
+Analytical = 0.000003s
+
+#### Finite Volume
+
+FTCS/FTCS = 0.038992s
+Upwind/FTCS = 0.038287s
+
+#### Finite Difference
+
+FTCS/FTCS = 0.038769s
+Upwind/FTCS = 0.038277s
+Lax-Wendroff/FTCS = 0.056178s
+MacCormack/FTCS = 0.079028s
+
 ### Example Plot
-![Convection-Diffusion PDE Plot](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/convection-diffusion.png)
+![Convection-Diffusion PDE Plot #1](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/convection-diffusion-fig1.png)
+![Convection-Diffusion PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/convection-diffusion/convection-diffusion-fig2.png)
 
 ## Elliptic PDE
 
 Steady-state temperature distribution of a two-dimensional rectangular plate is approximated using finite difference method. Plate dimensions and boundary conditions at the edges are given. Different types of relaxation are applied: Point Successive Over-Relaxation (PSOR), Line Successive Over-Relaxation (LSOR), and Alternative Direction Implicit (ADI).
+
+### Comparative Times
+
+Analytical = 0.3730s
+PSOR = 4.4366s
+LSOR = 0.4166s
+ADI = 4.6181s
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/description.pdf)
 
 ### Example Plots
 ![Elliptic PDE Plot #1](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/elliptic-fig1.png)
 ![Elliptic PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/elliptic-fig2.png)
-![Elliptic PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/elliptic-fig3.png)
+![Elliptic PDE Plot #3](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/elliptic-fig3.png)
+![Elliptic PDE Plot #4](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/elliptic-fig4.png)
 
 ## Vorticity-Stream Function Method
 
@@ -43,6 +73,15 @@ The steady-state u-velocity profile of an incompressible laminar flow within a p
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/description.pdf)
 
+### Comparative Times
+
+Analytical = 0.0027s
+Approximation = 292.11s
+
 ### Example Plots
-![Vorticity PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig1.png)
+![Vorticity PDE Plot #1](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig1.png)
 ![Vorticity PDE Plot #2](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig2.png)
+![Vorticity PDE Plot #3](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig3.png)
+![Vorticity PDE Plot #4](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig4.png)
+![Vorticity PDE Plot #5](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig5.png)
+![Vorticity PDE Plot #6](https://raw.githubusercontent.com/byrneta/Computational-Fluid-Dynamics/master/vorticity-streamfunction/vortstream-fig6.png)

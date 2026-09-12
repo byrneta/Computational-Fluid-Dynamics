@@ -12,6 +12,7 @@ rho = 800;	% Density, rho (kg/m^3)
 Uo = 40;	% Speed of Lower Plate, Uo (m/s)
 
 %% Computational Method
+tic;
 
 dy = 0.001;	% Step Size in Y, dy
 
@@ -45,8 +46,10 @@ for j=2:numT
         U(i,j) = d*U(i-1,j-1) + (1-2*d)*U(i,j-1) + d*U(i+1,j-1);
     end
 end
+FTCStime=toc
 
 %% Analytical Solution
+tic;
 ya = 0:0.001:h;
 
 eta = ya/(2*sqrt(nu*T));
@@ -66,6 +69,7 @@ for n=1:9999
 end
 
 Ua = Uo*(SUM1-SUM2)';
+Tatime=toc
 
 %% Plot Results
 figure;

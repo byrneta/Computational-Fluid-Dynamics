@@ -26,18 +26,12 @@ tol = 0.000001;                 % Desired Residual Tolerance, tol
 
 %% Analytical Solution
 
-Ta = zeros(length(x),length(y));
+[Xg,Yg] = ndgrid(x,y);
+Ta = zeros(size(Xg));
 tic;
-for i=1:length(x);
-    for j=1:length(y);
-        SUM=0;
-        temp=0;
-        for n=1:10000;
-            temp=((2*To)/(n*pi*(1-exp(-n*pi*h/L)))) * (1-cos(n*pi)) * (exp(-n*pi*y(j)/(2*L))-exp((-n*pi/L)*(h-((y(j))/2)))) * sin(n*pi*x(i)/(2*L));
-            SUM=SUM+temp;
-        end
-        Ta(i,j)=SUM;
-    end
+for n=1:10000
+    temp=((2*To)/(n*pi*(1-exp(-n*pi*h/L)))) .* (1-cos(n*pi)) * (exp(-n*pi*Yg/(2*L)) - exp((-n*pi/L)*(h-(Yg/2)))) .* sin(n*pi*Xg/(2*L));
+    Ta = Ta + temp;
 end
 Tatime=toc
 
@@ -222,3 +216,12 @@ ylabel('T (K)');
 xlabel('X (m)');
 legend('PSOR','LSOR','ADI','Exact');
 title(['Analytical vs Finite Difference Schemes at Y=',num2str(y(31)),'m'])
+
+figure;
+surf(x,y,Ta');
+xlabel('X (m)');
+ylabel('Y (m)');
+zlabel('T (K)');
+title('Analytical Steady-State Temperature Field, T(x,y)');
+colorbar;
+shading interp;

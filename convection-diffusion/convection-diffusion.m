@@ -10,10 +10,12 @@ alpha = 0.005;			% Acceleration, alpha (m^2/s)
 Uo = 1.0;                       % BC u(0,t), Uo (m/s)
 
 %% Analytical Solution
+tic;
 xa = 0:0.001:L;                 % Create Analytic X Column Vector, xa
 xo = 0.2;			% Initial Position, xo (m)
 
 Ua = 1-0.5*(1+erf((xa-xo-a*T)/(2*sqrt(alpha*T))))'; 
+Tatime=toc
 
 %% Initialization 
 
@@ -46,54 +48,58 @@ for i=1:numX                    % Apply IC's
 end
 
 %% Finite Volume - FTCS Convection / FTCS Diffusion
-
+tic;
 Uvftcs=U;
 for j=2:numT
     for i=2:numX-1
         Uvftcs(i,j) = Uvftcs(i,j-1) - (c/2)*( Uvftcs(i+1,j-1) - Uvftcs(i-1,j-1) ) + d*( Uvftcs(i+1,j-1) - 2*Uvftcs(i,j-1) + Uvftcs(i-1,j-1) );
     end
 end
+Uvftcstime=toc
 
 %% Finite Volume - First Order Upwind Convection / FTCS Diffusion
-
+tic;
 Uvuf=U;
 for j=2:numT
     for i=2:numX-1
         Uvuf(i,j) = Uvuf(i,j-1) - c*( Uvuf(i,j-1) - Uvuf(i-1,j-1) ) + d*( Uvuf(i+1,j-1) - 2*Uvuf(i,j-1) + Uvuf(i-1,j-1) );
     end
 end
-
+Uvuftime=toc
 
 
 %% Finite Difference - FTCS Convection / FTCS Diffusion
-
+tic;
 Uftcs=U;
 for j=2:numT
     for i=2:numX-1
         Uftcs(i,j) = Uftcs(i,j-1) - (c/2)*( Uftcs(i+1,j-1) - Uftcs(i-1,j-1) ) + d*( Uftcs(i+1,j-1) - 2*Uftcs(i,j-1) + Uftcs(i-1,j-1) );
     end
 end
+Uftcstime=toc
 
 %% Finite Difference - First Order Upwind Convection / FTCS Diffusion
-
+tic;
 Uuf=U;
 for j=2:numT
     for i=2:numX-1
         Uuf(i,j) = Uuf(i,j-1) - c*( Uuf(i,j-1) - Uuf(i-1,j-1) ) + d*( Uuf(i+1,j-1) - 2*Uuf(i,j-1) + Uuf(i-1,j-1) );
     end
 end
+Uuftime=toc
 
 %% Finite Difference - Lax-Wendroff Convection / FTCS Diffusion
-
+tic;
 Ulwf=U;
 for j=2:numT
     for i=2:numX-1
         Ulwf(i,j) = Ulwf(i,j-1) - (c/2)*( Ulwf(i+1,j-1) - Ulwf(i-1,j-1) ) + (c^2/2)*( Ulwf(i+1,j-1) - 2*Ulwf(i,j-1) + Ulwf(i-1,j-1) ) + d*( Ulwf(i+1,j-1) - 2*Ulwf(i,j-1) + Ulwf(i-1,j-1) );
     end
 end
+Ulwftime=toc
 
 %% Finite Difference - MacCormack Convection / FTCS Diffusion
-
+tic;
 Umf=U;
 Umfs=Umf;
 %for j=2:numT
@@ -110,7 +116,7 @@ for j=1:numT-1
         Umf(i,j+1) = 0.5*( Umf(i,j) + Umfs(i,j)  - c*( Umfs(i,j) - Umfs(i-1,j) )) + d*( Umfs(i+1,j) - 2*Umfs(i,j) + Umfs(i-1,j) );
     end
 end
-
+Umftime=toc
 
 %% Plot Results
 figure;

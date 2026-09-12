@@ -48,7 +48,7 @@ Xi(:,Ny) = (7*Psi(:,Ny)-8*Psi(:,Ny-1)+Psi(:,Ny-2))/(2*dy^2);
 
 
 %% Analytical Solution
-
+tic;
 Ua = zeros(Nx,Ny);
 
 for i=1:Nx;
@@ -56,9 +56,10 @@ for i=1:Nx;
         Ua(i,j)=6*(y(j)-y(j)^2);
     end    
 end
+Tatime=toc
 
 %% Numerical Approximation
-
+tic;
 del = 1;
 PSORdel = 1;
 Xinew=Xi;
@@ -159,6 +160,7 @@ while eldel>0.001
     eldel=norm((Unew(el+1,:)-Unew(el,:)))/norm(Unew(el,:));
     el=el+1;
 end
+AppTime=toc
 
 %% Plot Results
 figure;
@@ -175,5 +177,32 @@ hold on
 plot(Unew(2:el,:),y);
 ylabel('Y');
 xlabel('u-velocity');
-legend(['x=',num2str(x(el-6))],['x=',num2str(x(el-5))],['x=',num2str(x(el-4))],['x=',num2str(x(el-3))],['x=',num2str(x(el-2))],['x=',num2str(x(el-1))],['x=',num2str(x(el))]);
-title(['Steady-State u-velocity Profile'])
+devLabels = arrayfun(@(k) ['x=',num2str(x(k))], 2:el, 'UniformOutput', false);
+legend(devLabels);
+title(['Developing u-velocity Profile'])
+
+figure;
+plot(Vnew(el,:),y,'bo-');
+ylabel('Y');
+xlabel('v-velocity');
+title(['v-velocity at Fully Developed Station x=',num2str(x(el))])
+
+figure;
+plot(Xinew(el,:),y,'go-');
+ylabel('Y');
+xlabel('vorticity, \xi');
+title(['Vorticity Profile at Fully Developed Station x=',num2str(x(el))])
+
+figure;
+contour(x,y,Psinew',20);
+colorbar;
+xlabel('X');
+ylabel('Y');
+title('Stream Function \psi -- Streamlines')
+
+figure;
+contour(x,y,Xinew',20);
+colorbar;
+xlabel('X');
+ylabel('Y');
+title('Vorticity \xi Field')

@@ -16,7 +16,7 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 ### Comparative Times
 
-Analytical = 0.05328s
+Analytical = 0.05328s\
 Approximation = 0.07509s
 
 ### Example Plot
@@ -34,14 +34,14 @@ Analytical = 0.000003s
 
 #### Finite Volume
 
-FTCS/FTCS = 0.038992s
+FTCS/FTCS = 0.038992s\
 Upwind/FTCS = 0.038287s
 
 #### Finite Difference
 
-FTCS/FTCS = 0.038769s
-Upwind/FTCS = 0.038277s
-Lax-Wendroff/FTCS = 0.056178s
+FTCS/FTCS = 0.038769s\
+Upwind/FTCS = 0.038277s\
+Lax-Wendroff/FTCS = 0.056178s\
 MacCormack/FTCS = 0.079028s
 
 ### Example Plot
@@ -54,9 +54,9 @@ Steady-state temperature distribution of a two-dimensional rectangular plate is 
 
 ### Comparative Times
 
-Analytical = 0.3730s
-PSOR = 4.4366s
-LSOR = 0.4166s
+Analytical = 0.3730s\
+PSOR = 4.4366s\
+LSOR = 0.4166s\
 ADI = 4.6181s
 
 See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/master/elliptic/description.pdf)
@@ -75,7 +75,7 @@ See [Description](https://raw.github.com/byrneta/Computational-Fluid-Dynamics/ma
 
 ### Comparative Times
 
-Analytical = 0.0027s
+Analytical = 0.0027s\
 Approximation = 292.11s
 
 ### Example Plots

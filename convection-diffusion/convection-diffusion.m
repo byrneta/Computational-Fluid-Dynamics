@@ -19,7 +19,7 @@ Tatime=toc
 
 %% Initialization 
 
-dx = 0.015;                     % Step Size in X, dx
+dx = 0.005;                     % Step Size in X, dx
 dt = (0.05*dx^2)/alpha;         % Step Size in T (Calculated), dt
 d = alpha*dt/dx^2;              % Fourier Coefficient, d
 c = a*dt/dx;                    % Courant Coefficient, c
